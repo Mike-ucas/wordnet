@@ -1,0 +1,126 @@
+<dataSource name="MySQL - wordnet@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="wordnet">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema" />
+    <schema id="3" name="mysql" />
+    <schema id="4" name="performance_schema" />
+    <schema id="5" name="sakila" />
+    <schema id="6" name="sys" />
+    <schema id="7" name="world" />
+    <table id="8" parent="1" name="user_action" />
+    <table id="9" parent="1" name="user_login" />
+    <table id="10" parent="1" name="user_profile" />
+    <table id="11" parent="1" name="vas_resource" />
+    <column id="12" parent="8" name="id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="13" parent="8" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="14" parent="8" name="vas_id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="15" parent="8" name="action">
+      <mandatory>1</mandatory>
+      <data-type>enum('support', 'dislike', 'share')|0</data-type>
+    </column>
+    <key id="16" parent="8" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="17" parent="9" name="id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="18" parent="9" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="19" parent="9" name="category">
+      <mandatory>1</mandatory>
+      <data-type>enum('administrator', 'teacher', 'bachelor', 'master', 'PHD')|0</data-type>
+    </column>
+    <key id="20" parent="9" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="21" parent="10" name="id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="22" parent="10" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="23" parent="10" name="gender">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="24" parent="10" name="phone">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="25" parent="10" name="birthday">
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="26" parent="10" name="major">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <key id="27" parent="10" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="28" parent="11" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="29" parent="11" name="title">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="30" parent="11" name="type">
+      <mandatory>1</mandatory>
+      <data-type>enum('audio', 'video')|0</data-type>
+    </column>
+    <column id="31" parent="11" name="thumb">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="32" parent="11" name="source_path">
+      <mandatory>1</mandatory>
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="33" parent="11" name="desc">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="34" parent="11" name="length">
+      <mandatory>1</mandatory>
+      <data-type>int(12)|0</data-type>
+    </column>
+    <column id="35" parent="11" name="pos_score">
+      <mandatory>1</mandatory>
+      <data-type>int(12) unsigned zerofill|0</data-type>
+    </column>
+    <column id="36" parent="11" name="neg_score">
+      <mandatory>1</mandatory>
+      <data-type>int(12) unsigned zerofill|0</data-type>
+    </column>
+    <column id="37" parent="11" name="share">
+      <mandatory>1</mandatory>
+      <data-type>int(12) unsigned zerofill|0</data-type>
+    </column>
+    <column id="38" parent="11" name="speed">
+      <data-type>int(12)|0</data-type>
+    </column>
+    <key id="39" parent="11" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
