@@ -15,7 +15,14 @@
     <servlet-name>mvc-dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <servlet-name>Json</servlet-name>
+    <servlet-class>com.lemon.controller.Json</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Json</servlet-name>
+  <url-pattern>/json</url-pattern>
+</servlet-mapping>
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
@@ -23,7 +30,4 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
-  <welcome-file-list>
-    <welcome-file>/login</welcome-file>
-  </welcome-file-list>
 </web-app>

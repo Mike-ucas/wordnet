@@ -92,6 +92,11 @@
           <version>2.4</version>
           <classifier>jdk15</classifier>
       </dependency>
+      <dependency>
+          <groupId>javax.enterprise</groupId>
+          <artifactId>cdi-api</artifactId>
+          <version>1.0</version>
+      </dependency>
   </dependencies>
 <build>
 <!--最终生成的war文件名-->

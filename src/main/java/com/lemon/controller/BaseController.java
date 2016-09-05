@@ -35,7 +35,7 @@ public class BaseController {
 
 
 
-    @RequestMapping(value = "/json" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/json1" ,method = RequestMethod.GET)
     public String welcome(ModelMap model) throws SQLException {
         String sql_temp="select * from wordnet.user_login";
         // JSON格式数据解析对象
@@ -46,7 +46,7 @@ public class BaseController {
             PreparedStatement pst=conn.prepareStatement(sql_temp);
             ResultSet rs=pst.executeQuery();
             //create Json here.Data
-            System.out.println(rs.next());
+           // System.out.println(rs.next());
             Map<String, String> map1 = new HashMap<String, String>();
             //while(rs.next()){
             map1.put("id", rs.getString("id"));
@@ -71,8 +71,8 @@ public class BaseController {
     public String welcome(){
         return "login";//返回login.jsp
     }
-//    @RequestMapping(value = "/register" ,method = RequestMethod.GET)
-//    public String register(){
-//        return "register";//返回register.jsp
-//    }
+    @RequestMapping(value = "/json" ,method = RequestMethod.GET)
+    public String test(){
+        return "json";//返回test.jsp
+    }
 }
