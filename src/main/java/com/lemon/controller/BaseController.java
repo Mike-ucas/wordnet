@@ -35,7 +35,7 @@ public class BaseController {
 
 
 
-    @RequestMapping(value = "/1" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/json" ,method = RequestMethod.GET)
     public String welcome(ModelMap model) throws SQLException {
         String sql_temp="select * from wordnet.user_login";
         // JSON格式数据解析对象
@@ -69,6 +69,10 @@ public class BaseController {
 
     @RequestMapping(value = "/" ,method = RequestMethod.GET)
     public String welcome(){
-        return "login";//返回index.jsp
+        return "login";//返回login.jsp
     }
+//    @RequestMapping(value = "/register" ,method = RequestMethod.GET)
+//    public String register(){
+//        return "register";//返回register.jsp
+//    }
 }

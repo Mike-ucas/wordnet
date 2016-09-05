@@ -29,6 +29,6 @@
     密码&nbsp;<input type="password" name="password" /><br/>
     <input type="submit" value="登陆"/><br/>
 </form>
-<a href="E:/project/wordnet/src/main/webapp/WEB-INF/pages/register.jsp">注册用户</a>
+<a href="register">注册用户</a>
 </body>
 </html>

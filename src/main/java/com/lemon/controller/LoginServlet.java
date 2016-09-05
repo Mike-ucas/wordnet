@@ -52,7 +52,11 @@ public class LoginServlet extends HttpServlet {
                         errMsg += "您的用户名密码不匹配，请重新输入";
                     }
                 } else {
-                    errMsg += "您的用户名不存在，请先注册";
+                    if(id.length()==0||password.length()==0){
+                        errMsg += "您的用户名或密码为空，请填写完整";
+                    }else{
+                        errMsg += "您的用户名不存在，请先注册";
+                    }
                 }
                 conn.close();
             } catch (Exception e) {
