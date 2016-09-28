@@ -4,6 +4,7 @@ package com.lemon.controller;
  * Created by Wang Haobo on 2016/9/3.
  */
 
+import com.lemon.dao.UserLogin;
 import com.lemon.tools.DatabaseConnection;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -18,9 +19,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
-
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 15-1-31.
@@ -28,7 +28,6 @@ import java.util.Map;
 /*There must be a Controller annotation or the application will doesn't work .*/
 @Controller
 public class BaseController {
-    private static int counter=0;
     private static final String VIEW_INDEX="index";
     private static final Logger logger= LoggerFactory.getLogger(BaseController.class);
 
@@ -36,34 +35,36 @@ public class BaseController {
 
 
     @RequestMapping(value = "/json1" ,method = RequestMethod.GET)
-    public String welcome(ModelMap model) throws SQLException {
-        String sql_temp="select * from wordnet.user_login";
+    public String json(ModelMap model) throws SQLException {
         // JSON格式数据解析对象
         JSONObject json_obj = new JSONObject();
 
         try{
             Connection conn= DatabaseConnection.getInitConn().getConnection();
+            String sql_temp="select * from wordnet.user_login ";
             PreparedStatement pst=conn.prepareStatement(sql_temp);
             ResultSet rs=pst.executeQuery();
-            //create Json here.Data
-           // System.out.println(rs.next());
-            Map<String, String> map1 = new HashMap<String, String>();
-            //while(rs.next()){
-            map1.put("id", rs.getString("id"));
-            map1.put("password", rs.getString("password"));
-            map1.put("category", rs.getString("category"));
-            // 将Map转换为JSONArray数据
-            JSONArray ja1 = JSONArray.fromObject(map1);
-            json_obj.put("user_login",ja1);
+           //System.out.println(rs.next());
+            List<UserLogin> list = new ArrayList<UserLogin>();
+            while(rs.next()) {
+                UserLogin user = new UserLogin();
+                user.setId(rs.getString("id"));
+                //System.out.println(rs.getString("id"));
+                user.setPassword(rs.getString("password"));
+               // user.setCategory(rs.getString("category"));
+                list.add(user);
+            }
+            //创建JsonArray对象，JSONArray则是[]包裹起来的一个数组(Array)，此处调用方法将对象集合装入
+            JSONArray json = JSONArray.fromObject(list);
+            //JSONObject是一个{}包裹起来的一个对象(Object)，此处希望以对象为单位进行操作，所以创建JSONObject对象
+            //将jsonArray对象装入
+            json_obj.put("user_login", json);
 
             conn.close();
         }catch(Exception e){
             e.printStackTrace();
         }
         model.addAttribute("user",json_obj);
-        model.addAttribute("message","Welcome");
-        model.addAttribute("counter",++counter);
-        logger.debug("[Welcome counter :{}",counter);
         return VIEW_INDEX;//返回index.jsp
     }
 
@@ -74,5 +75,10 @@ public class BaseController {
     @RequestMapping(value = "/json" ,method = RequestMethod.GET)
     public String test(){
         return "json";//返回test.jsp
+    }
+
+    @RequestMapping(value = "/upload" ,method = RequestMethod.GET)
+    public String upload(){
+        return "upload";//返回upload.jsp
     }
 }

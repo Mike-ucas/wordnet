@@ -7,7 +7,9 @@
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <mvc:annotation-driven></mvc:annotation-driven>
     <!-- Controller的包，使容器启动的时候可以找的并实例化Controller -->
-    <context:component-scan base-package="com.lemon.controller"/>
+    <context:annotation-config />
+    <!--扫描controller包进来，以后请求去这里面找对应的路径 -->
+    <context:component-scan base-package="com.lemon.controller"></context:component-scan>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
             <value>/WEB-INF/pages/</value>
@@ -16,4 +18,14 @@
             <value>.jsp</value>
         </property>
     </bean>
+
+    <!-- 支持上传文件 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+
+    <!-- 一定要这个annotation-driven，不然获得不了静态资源，还有注意mapping的值一定不要与项目名字开头有相同的，否则会出很多问题 ，很多要通过controler的都会出问题-->
+    <mvc:annotation-driven/>
+    <!-- 映射静态资源 -->
+    <!--后面img引用图片路径要这个静态映射  -->
+    <mvc:resources location="/lupload/" mapping="/lupload/**" />
 </beans>

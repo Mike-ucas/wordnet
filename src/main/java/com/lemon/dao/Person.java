@@ -1,4 +1,4 @@
-package com.lemon.controller;
+package com.lemon.dao;
 
 /**
  * Created by Wang Haobo on 2016/9/5.

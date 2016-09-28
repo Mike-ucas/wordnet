@@ -3,6 +3,7 @@
     <properties maven-id="javax.servlet:servlet-api:2.4" />
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/servlet-api-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/servlet-api-2.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

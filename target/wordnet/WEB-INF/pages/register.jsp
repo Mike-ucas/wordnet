@@ -24,7 +24,7 @@
 </span>
 
 请输入用户名和密码：
-<form id="login" method="post" action="register">
+<form id="register" method="post" action="register">
     学号：<input type="text" name="id" /><br/>
     密码&nbsp;<input type="password" name="password" /><br/>
     确认密码<input type="password" name="conPassword" /><br/>

@@ -1,5 +1,6 @@
-package com.lemon.controller;
+package com.lemon.servlet;
 
+import com.lemon.dao.Person;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
@@ -16,7 +17,6 @@ import java.util.List;
  * Created by Wang Haobo on 2016/9/5.
  */
 
-//@WebServlet(name="Json", urlPatterns={"/json"})
 public class Json extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

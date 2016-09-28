@@ -1,4 +1,4 @@
-package com.lemon.controller;
+package com.lemon.servlet;
 
 import com.lemon.tools.DatabaseConnection;
 
