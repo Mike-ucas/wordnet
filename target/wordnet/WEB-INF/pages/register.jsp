@@ -28,6 +28,11 @@
     学号：<input type="text" name="id" /><br/>
     密码&nbsp;<input type="password" name="password" /><br/>
     确认密码<input type="password" name="conPassword" /><br/>
+    身份&nbsp：<select name="category" >
+                <option value="">请选择</option>
+                <option value="teacher" selected>教师</option>
+                <option value="student">学生</option>
+        </select><br/>
     <input type="submit" value="注册"/><br/>
 </form>
 </body>

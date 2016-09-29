@@ -26,6 +26,7 @@ public class RegisterServlet extends HttpServlet{
         String id = request.getParameter("id");
         String password = request.getParameter("password");
         String conPassword = request.getParameter("conPassword");
+        String category = request.getParameter("category");
 
         if (id== null|| password ==null||conPassword==null) {
             rd = request.getRequestDispatcher("/WEB-INF/pages/register.jsp");
@@ -48,7 +49,7 @@ public class RegisterServlet extends HttpServlet{
                         pst = conn.prepareStatement("insert into user_login(id, password,category) values(?, ?,?)");
                         pst.setObject(1, id);
                         pst.setObject(2, password);
-                        pst.setObject(3, "master");
+                        pst.setObject(3,category );
                         // 查询结果集
                         int addUser = pst.executeUpdate();
                         //boolean addUser = dd.insert("insert into user_login(id, password，category) values(?, ?,?)",id, password,"master");

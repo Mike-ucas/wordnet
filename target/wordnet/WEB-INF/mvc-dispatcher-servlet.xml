@@ -28,4 +28,5 @@
     <!-- 映射静态资源 -->
     <!--后面img引用图片路径要这个静态映射  -->
     <mvc:resources location="/lupload/" mapping="/lupload/**" />
+    <mvc:resources location="/video/" mapping="/video/**"/>
 </beans>

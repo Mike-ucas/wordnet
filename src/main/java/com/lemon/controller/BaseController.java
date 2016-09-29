@@ -4,7 +4,7 @@ package com.lemon.controller;
  * Created by Wang Haobo on 2016/9/3.
  */
 
-import com.lemon.dao.UserLogin;
+import com.lemon.model.UserLogin;
 import com.lemon.tools.DatabaseConnection;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -69,7 +69,7 @@ public class BaseController {
     }
 
     @RequestMapping(value = "/" ,method = RequestMethod.GET)
-    public String welcome(){
+    public String login(){
         return "login";//返回login.jsp
     }
     @RequestMapping(value = "/json" ,method = RequestMethod.GET)
@@ -77,8 +77,12 @@ public class BaseController {
         return "json";//返回test.jsp
     }
 
-    @RequestMapping(value = "/upload" ,method = RequestMethod.GET)
-    public String upload(){
-        return "upload";//返回upload.jsp
+    @RequestMapping(value = "/uploadvideo" ,method = RequestMethod.GET)
+    public String uploadvideo(){
+        return "uploadvideo";//返回upload.jsp
+    }
+    @RequestMapping(value = "/welcome" ,method = RequestMethod.GET)
+    public String welcome(){
+        return "welcome";//返回welcome.jsp
     }
 }

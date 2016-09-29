@@ -39,7 +39,7 @@ public class AuthenticateServlet extends HttpServlet {
                     jsonObject.put("message", "success");
                     jsonObject.put("status", "true");
                 } else {
-                    jsonObject.put("message", "success");
+                    jsonObject.put("message", "failed");
                     jsonObject.put("status", "false");
                 }
             }else {

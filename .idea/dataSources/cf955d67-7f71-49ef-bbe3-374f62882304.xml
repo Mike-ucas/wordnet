@@ -96,133 +96,139 @@
     <column id="38" parent="11" name="thumb">
       <data-type>varchar(100)|0</data-type>
     </column>
-    <column id="39" parent="11" name="source_path">
+    <column id="39" parent="11" name="url">
       <mandatory>1</mandatory>
       <data-type>varchar(100)|0</data-type>
     </column>
-    <column id="40" parent="11" name="desc">
+    <column id="40" parent="11" name="intro">
       <data-type>varchar(100)|0</data-type>
     </column>
-    <key id="41" parent="11" name="PRIMARY">
+    <column id="41" parent="11" name="srt_en">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="42" parent="11" name="srt_zh">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="43" parent="11" name="date">
+      <mandatory>1</mandatory>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <key id="44" parent="11" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="42" parent="12" name="id">
+    <column id="45" parent="12" name="id">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="43" parent="12" name="title">
+    <column id="46" parent="12" name="title">
       <data-type>varchar(64)|0</data-type>
     </column>
-    <column id="44" parent="12" name="author">
+    <column id="47" parent="12" name="author">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="45" parent="12" name="content">
+    <column id="48" parent="12" name="content">
       <data-type>varchar(512)|0</data-type>
     </column>
-    <column id="46" parent="12" name="date">
-      <data-type>date|0</data-type>
+    <column id="49" parent="12" name="date">
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
     </column>
-    <key id="47" parent="12" name="PRIMARY">
+    <key id="50" parent="12" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="48" parent="13" name="id">
+    <column id="51" parent="13" name="id">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="49" parent="13" name="title">
+    <column id="52" parent="13" name="title">
       <data-type>varchar(64)|0</data-type>
     </column>
-    <column id="50" parent="13" name="author">
+    <column id="53" parent="13" name="author">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="51" parent="13" name="content">
+    <column id="54" parent="13" name="content">
       <data-type>varchar(512)|0</data-type>
     </column>
-    <column id="52" parent="13" name="date">
-      <data-type>date|0</data-type>
+    <column id="55" parent="13" name="date">
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
     </column>
-    <key id="53" parent="13" name="PRIMARY">
+    <key id="56" parent="13" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="54" parent="14" name="id">
+    <column id="57" parent="14" name="id">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="55" parent="14" name="word">
+    <column id="58" parent="14" name="word">
       <mandatory>1</mandatory>
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="56" parent="14" name="unit_order">
+    <column id="59" parent="14" name="unit">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="57" parent="14" name="unit_disorder">
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="58" parent="14" name="phonetic_uk">
+    <column id="60" parent="14" name="phonetic_uk">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="59" parent="14" name="phonetic_usa">
+    <column id="61" parent="14" name="phonetic_usa">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="60" parent="14" name="paraphrase_en">
+    <column id="62" parent="14" name="paraphrase_en">
       <data-type>varchar(100)|0</data-type>
     </column>
-    <column id="61" parent="14" name="paraphrase_zh">
+    <column id="63" parent="14" name="paraphrase_zh">
       <data-type>varchar(100)|0</data-type>
     </column>
-    <column id="62" parent="14" name="sample_sentence1">
+    <column id="64" parent="14" name="sample_sentence1">
       <data-type>varchar(100)|0</data-type>
     </column>
-    <column id="63" parent="14" name="sample_sentence2">
+    <column id="65" parent="14" name="sample_sentence2">
       <data-type>varchar(100)|0</data-type>
     </column>
-    <key id="64" parent="14" name="PRIMARY">
+    <key id="66" parent="14" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="65" parent="15" name="id">
+    <column id="67" parent="15" name="id">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="66" parent="15" name="user_id">
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="67" parent="15" name="article_id">
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="68" parent="15" name="difficulty">
+    <column id="68" parent="15" name="user_id">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="69" parent="15" name="date">
-      <data-type>date|0</data-type>
+    <column id="69" parent="15" name="article_id">
+      <data-type>int(11)|0</data-type>
     </column>
-    <key id="70" parent="15" name="PRIMARY">
+    <column id="70" parent="15" name="date">
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <key id="71" parent="15" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="71" parent="16" name="id">
+    <column id="72" parent="16" name="id">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="72" parent="16" name="title">
+    <column id="73" parent="16" name="title">
       <data-type>varchar(64)|0</data-type>
-    </column>
-    <column id="73" parent="16" name="vas_id">
-      <data-type>int(11)|0</data-type>
     </column>
     <column id="74" parent="16" name="source_path">
       <data-type>varchar(100)|0</data-type>
     </column>
     <column id="75" parent="16" name="submit_date">
-      <data-type>date|0</data-type>
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
     </column>
     <key id="76" parent="16" name="PRIMARY">
       <columns>id</columns>
@@ -233,39 +239,38 @@
       <data-type>int(11)|0</data-type>
     </column>
     <column id="78" parent="17" name="user_id">
-      <data-type>int(11)|0</data-type>
+      <data-type>varchar(45)|0</data-type>
     </column>
     <column id="79" parent="17" name="video_id">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="80" parent="17" name="times">
-      <data-type>int(11)|0</data-type>
+    <column id="80" parent="17" name="date">
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
     </column>
-    <column id="81" parent="17" name="date">
-      <data-type>date|0</data-type>
-    </column>
-    <key id="82" parent="17" name="PRIMARY">
+    <key id="81" parent="17" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="83" parent="18" name="id">
+    <column id="82" parent="18" name="id">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="84" parent="18" name="user_id">
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="85" parent="18" name="voc_id">
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="86" parent="18" name="difficulty">
+    <column id="83" parent="18" name="user_id">
       <data-type>varchar(45)|0</data-type>
     </column>
-    <column id="87" parent="18" name="date">
-      <data-type>date|0</data-type>
+    <column id="84" parent="18" name="voc_id">
+      <data-type>int(11)|0</data-type>
     </column>
-    <key id="88" parent="18" name="PRIMARY">
+    <column id="85" parent="18" name="difficulty">
+      <data-type>varchar(45)|0</data-type>
+    </column>
+    <column id="86" parent="18" name="date">
+      <data-type>timestamp|0</data-type>
+      <default-expression>CURRENT_TIMESTAMP</default-expression>
+    </column>
+    <key id="87" parent="18" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
